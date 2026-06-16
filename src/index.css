@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-deep-border;
+  }
+
+  body {
+    @apply bg-deep text-gray-100;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-deep-light;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cosmic-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cosmic-600;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-glass-light backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-gradient-to-br from-glass-light to-glass-medium backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-glass-heavy hover:border-cosmic-500/30 hover:shadow-cosmic-500/10;
+  }
+
+  .glass-sidebar {
+    @apply bg-deep-light/90 backdrop-blur-xl border-r border-white/10;
+  }
+
+  .glass-nav {
+    @apply bg-deep/95 backdrop-blur-xl border-t border-white/10;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-cosmic-600 to-cosmic-500 hover:from-cosmic-500 hover:to-cosmic-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-cosmic-500/20 hover:shadow-cosmic-500/40 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-glass-medium hover:bg-glass-heavy text-gray-200 font-semibold rounded-xl border border-white/10 transition-all duration-300 active:scale-[0.98];
+  }
+
+  .input-glass {
+    @apply w-full px-4 py-3 bg-glass-light backdrop-blur-sm border border-white/10 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cosmic-500/50 focus:border-cosmic-500/50 transition-all duration-300;
+  }
+
+  .badge {
+    @apply px-3 py-1 text-xs font-medium rounded-full;
+  }
+
+  .badge-pro {
+    @apply badge bg-gradient-to-r from-cosmic-600 to-purple-500 text-white;
+  }
+
+  .badge-elite {
+    @apply badge bg-gradient-to-r from-amber-500 to-orange-500 text-black;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cosmic-300 via-purple-300 to-cosmic-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative rounded-2xl bg-gradient-to-br from-cosmic-500/20 to-purple-500/20 p-[1px];
+  }
+
+  .gradient-border > * {
+    @apply rounded-2xl;
+  }
+
+  .animate-in {
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+
+  .animate-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-in-delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-in-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Status bar glow */
+  .status-dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+
+  .status-dot-active {
+    @apply status-dot bg-green-400 shadow-lg shadow-green-500/40;
+  }
+
+  .status-dot-idle {
+    @apply status-dot bg-yellow-400 shadow-lg shadow-yellow-500/30;
+  }
+
+  .status-dot-offline {
+    @apply status-dot bg-gray-500;
+  }
+}
